@@ -1,5 +1,4 @@
 #!/bin/bash
 
 
-i work everytime hardly
-i work softly and cearly
+Write a script that prints the effective username of the current user.
