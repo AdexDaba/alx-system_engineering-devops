@@ -2,4 +2,4 @@
 # install nginx
 apt-get -y update
 apt-get -y install nginx
-echo "Hello World" > /var/www/html/index.html-adugna.html start
+echo "Hello World" > C:\Users\Adu/.ssh/id_rsa/adugna.html start
