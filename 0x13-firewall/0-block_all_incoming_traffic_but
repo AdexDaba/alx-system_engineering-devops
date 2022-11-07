@@ -1,22 +1,14 @@
 #!/usr/bin/env bash
-# Configures ufw so that it blocks all incoming traffic, except the following TCP ports:
-# 22 (SSH)
-# 443 (HTTPS SSL)
-# 80 (HTTP)
+# setup ufw to allow ssh, http and https while blocking all the other traffic
 
-apt-get -y update
-apt -y install ufw
-
-#modifying config file to accept IPv6 connections
-sed -i "s/IPV6=no/IPV6=yes/" /etc/default/ufw
-
-# setting up default policies
-ufw default deny incoming
-ufw default allow outgoing
-
-# allowing ssh, http and https connections
-ufw allow ssh
-ufw allow http
-ufw allow https
-
-echo 'y' | sudo ufw enable
+sudo apt install ufw
+sudo ufw disable
+sudo ufw --force reset
+sudo ufw defaut deny incoming
+sudo ufw default allow outgoing
+sudo systemctl stop ufw
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo systemctl start ufw
+sudo ufw --force enable
